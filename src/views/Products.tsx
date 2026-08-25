@@ -4,8 +4,10 @@ import { getProducts } from '../services/ProductService'
 // eslint-disable-next-line react-refresh/only-export-components
 export async function loader() {
 
-  await getProducts()
+  const products = await getProducts()
   
+  console.log(products)
+
   return{
  
   }
