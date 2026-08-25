@@ -1,4 +1,16 @@
 import { Link} from 'react-router-dom'
+import { getProducts } from '../services/ProductService'
+
+// eslint-disable-next-line react-refresh/only-export-components
+export async function loader() {
+
+  await getProducts()
+  
+  return{
+ 
+  }
+  
+}
 
 export default function Products() {
   return (
@@ -10,7 +22,7 @@ export default function Products() {
             </Link>
         </div>
 
-        
+
 
     </>
 
