@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import Layout from './layout/Layout'
 import Products, {loader as productsLoader} from './views/Products'
 import NewProduct, {action as newProductAction} from './views/NewProduct'
-import EditProduct from './views/EditProduct'
+import EditProduct, {loader as editProduct, action as editProductAction} from './views/EditProduct'
 
 
 
@@ -24,7 +24,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'productos/:id/editar',
-                element: <EditProduct/>
+                element: <EditProduct/>,
+                loader: editProduct,
+                action: editProductAction
             }
         ],
     }
